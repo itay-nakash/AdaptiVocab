@@ -113,9 +113,9 @@
 
 <!-- Main Image-->
 <section class="hero teaser">
-  <div class="container is-max-desktop">
+  <div class="container" style="max-width: 60%;">
     <div class="hero-body">
-      <img src="static/images/attack_flow_image.png" alt="Foot-in-the-Door Attack Flow" height="100%">
+      <img src="static/images/attack_flow_image.png" alt="Foot-in-the-Door Attack Flow" style="width: 100%; height: auto;">
       <h2 class="subtitle has-text-centered">
         Foot-in-the-door attack flow. The user asks the agent to fix a website bug.
         The agent reads a contaminated GitHub issue with an indirect prompt injection (red) and a foot-in-the-door distractor (blue).
@@ -124,6 +124,7 @@
     </div>
   </div>
 </section>
+
 <!-- End Main Image -->
 
 <!-- Paper abstract -->
@@ -134,12 +135,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            With the rise of large language models (LLMs), LLM-based autonomous agents are becoming more common, making it crucial to understand their security vulnerabilities. 
-            We investigate how ReAct agents can be exploited using a method called the "foot-in-the-door" (FITD) attack. Our experiments show that indirect prompt injections, 
-            initiated by harmless requests (e.g., basic calculations), can lead to increased execution of malicious actions. Once a ReAct agent forms a thought involving a specific tool or action, 
-            it tends to execute it without re-evaluating, making even benign requests a gateway for embedding harmful instructions. To mitigate this, we propose a simple reflection mechanism that prompts 
-            agents to reassess their actions during execution, reducing the attack's effectiveness.
-          </p>
+            Following the advancement of large language models (LLMs), the development of LLM-based autonomous agents has become increasingly prevalent. As a result, the need to understand the security vulnerabilities of these agents has become a critical task. We examine how ReAct agents can be exploited using a straightforward yet effective method we refer to as the \emph{foot-in-the-door} attack.
+            Our experiments show that indirect prompt injection attacks, prompted by harmless and unrelated requests (such as basic calculations) can significantly increase the likelihood of the agent performing subsequent malicious actions.
+            Our results show that once a ReAct agent's thought includes a specific tool or action, the likelihood of executing this tool in the subsequent steps increases significantly, as the agent seldom re-evaluates its actions. 
+            Consequently, even random, harmless requests can establish a ‘foot-in-the-door’, allowing an attacker to embed malicious instructions into the agent's thought process, making it more susceptible to harmful directives.
+            To mitigate this vulnerability, we propose implementing a simple reflection mechanism that prompts the agent to reassess the safety of its actions during execution, which can help reduce the success of such attacks.          </p>
         </div>
       </div>
     </div>
@@ -154,8 +154,9 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/additional explan_fig.png" alt="MY ALT TEXT"/>
+         <!-- Center Image -->
+
+        <img src="static/images/additional explan_fig.png" alt="Setup Explained"/>
         <h2 class="subtitle has-text-centered">
           ReAct setup with various attack scenarios. The agent is informed of its tools via the system prompt (1). 
           Attacks like Indirect Prompt Injection (IPI) and Foot-in-the-Door (FITD) inject instructions into observations from external tools (2).
@@ -165,7 +166,7 @@
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/main_table.jpeg" alt="MY ALT TEXT"/>
+        <img src="static/images/main_table.jpeg" alt="Results Table"/>
         <h2 class="subtitle has-text-centered">
           Main results table: The table shows the attack success rates (ASR, %) across four different models and methods (and over 510 different attack cases).
           Our Foot-in-the-Door (FITD) attack proves significantly more effective than the baseline IPI (indirect prompt injection) across the board.
@@ -177,7 +178,7 @@
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/defences_fig4.png" alt="MY ALT TEXT"/>
+        <img src="static/images/defences_fig4.png" alt="Defenses effect"/>
         <h2 class="subtitle has-text-centered">
           This chart shows how three defenses—Hesitation Reflection, Safe Reflection, and Self Reflection—reduce the success of two types of attacks (IPI and FITD) across four models (LLaMA 3.1 70B, LLaMA 3 70B, Mixtral 8x7B, GPT-4o Mini). <br>
           <b>Self Reflection:</b> offers moderate protection, but dosen't require additional LLM instanse, and the least invasive. <br>
@@ -187,7 +188,7 @@
      </div>
      <div class="item has-text-centered">
       <!-- Your image here -->
-      <img src="static/images/heatmaps.jpeg" alt="MY ALT TEXT" class="is-centered"/>
+      <img src="static/images/heatmaps.jpeg" alt="Position Heatmap" class="is-centered"/>
       <h2 class="subtitle has-text-centered">
         This heatmap compares the success rates (ASR) of FITD attacks based on the position and timing of the distractor across four models.
         The x-axis represents the timing (early or late action), and the y-axis represents the position (early or late) within the input.
@@ -199,6 +200,38 @@
 </div>
 </div>
 </section>
+
+
+        <!-- Appendix exampels -->
+
+        <section class="hero is-small">
+          <div class="hero-body">
+            <div class="container">
+              <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                  <!-- Centered image -->
+                  <div style="text-align: center;">
+                    <img src="static/images/thoughts_exampels.png" alt="Thoughts exampels" style="width: 1100px; height: auto;" />
+                  </div>
+                  <h2 class="subtitle has-text-centered">
+                    <b>Examples of hesitation thoughts during successful attacks:</b> nce an agent generates a thought with intent, it typically proceeds with the action, even if harmful. Hesitation or objection in the thought process did not prevent the execution of malicious actions. The hesitation reflector identified these moments when active.
+                  </h2>
+                </div>
+        
+                <div class="item">
+                  <!-- Centered image -->
+                  <div style="text-align: center;">
+                    <img src="static/images/reflector_thoguhts.png" alt="Reflector examples" />
+                  </div>
+                  <h2 class="subtitle has-text-centered">
+                  <b>Reflector's role in ReAct-based agents during FITD attacks:</b> This illustrates the thought process of agents, where harmful intentions trigger the hesitation reflector to halt actions, while harmless thoughts lead to uninterrupted agent execution.
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
 <!-- End image carousel -->
 
 
