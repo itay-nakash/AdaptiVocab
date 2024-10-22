@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Breaking ReAct Agents: Foot-in-the-Door Attack Will Get You In</title>
+  <title></title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,20 +52,22 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Breaking ReAct Agents:</h1>
+            <h1 class="title is-1 publication-title">Foot-in-the-Door Attack Will Get You In</h1>
+            <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Itay Nakash</a></span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Itay Nakash</a><sup></sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">George Kour</a></span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">George Kour</a><sup></sup>,</span>
                 <span class="author-block">
-                  <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Guy Uziel</a></span>
+                  <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Guy Uziel</a></span>,</span>
                 <span class="author-block">
                   <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Ateret Anaby-Tavor</a></span>
               </div>
 
-                <div class="is-size-5 publication-authors">
-                  <span class="author-block">IBM Research AI<br></span>
-                </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">IBM Research AI<br></span>
+                  </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
@@ -80,20 +82,9 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/itay-nakash/FITD-ReAct-Agents-Attack" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -121,22 +112,20 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Main Image-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
+      <img src="static/images/attack_flow_image.png" alt="Foot-in-the-Door Attack Flow" height="100%">
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Foot-in-the-door attack flow. The user asks the agent to fix a website bug.
+        The agent reads a contaminated GitHub issue with an indirect prompt injection (red) and a foot-in-the-door distractor (blue).
+        These requests enter the agent's thought process, leading it to perform both the harmless distractor (calculate 2+4) and the malicious action (send admin credentials).
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End Main Image -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -146,7 +135,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            With the rise of large language models (LLMs), LLM-based autonomous agents are becoming more common, making it crucial to understand their security vulnerabilities. We investigate how ReAct agents can be exploited using a method called the "foot-in-the-door" (FITD) attack. Our experiments show that indirect prompt injections, initiated by harmless requests (e.g., basic calculations), can lead to increased execution of malicious actions. Once a ReAct agent forms a thought involving a specific tool or action, it tends to execute it without re-evaluating, making even benign requests a gateway for embedding harmful instructions. To mitigate this, we propose a simple reflection mechanism that prompts agents to reassess their actions during execution, reducing the attack's effectiveness.
+            With the rise of large language models (LLMs), LLM-based autonomous agents are becoming more common, making it crucial to understand their security vulnerabilities. 
+            We investigate how ReAct agents can be exploited using a method called the "foot-in-the-door" (FITD) attack. Our experiments show that indirect prompt injections, 
+            initiated by harmless requests (e.g., basic calculations), can lead to increased execution of malicious actions. Once a ReAct agent forms a thought involving a specific tool or action, 
+            it tends to execute it without re-evaluating, making even benign requests a gateway for embedding harmful instructions. To mitigate this, we propose a simple reflection mechanism that prompts 
+            agents to reassess their actions during execution, reducing the attack's effectiveness.
           </p>
         </div>
       </div>
@@ -163,7 +156,7 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/main_table.jpeg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
