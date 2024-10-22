@@ -156,30 +156,44 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
+        <img src="static/images/additional explan_fig.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          ReAct setup with various attack scenarios. The agent is informed of its tools via the system prompt (1). 
+          Attacks like Indirect Prompt Injection (IPI) and Foot-in-the-Door (FITD) inject instructions into observations from external tools (2).
+           FITD differs by the position and timing of distractor requests. In unfamiliar FITD, the agent can't use the distractor tool, causing invalid results.
+            Thought Injection (TI) places both actions in the agent's thought (3), while Harmless Thought Injection (HTI) includes only the benign request        
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
         <img src="static/images/main_table.jpeg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Main results table: The table shows the attack success rates (ASR, %) across four different models and methods (and over 510 different attack cases).
+          Our Foot-in-the-Door (FITD) attack proves significantly more effective than the baseline IPI (indirect prompt injection) across the board.
+          For familiar FITD (where the agent know the distractor that is used for FITD), ASR increased by almost double in many cases.
+          The combined IPI+FITD+TI method, that manipulate and inject the agent a thought achieves the highest ASR, reaching 99.2% on Mixtral and 97.1% on average,
+          showing the vulnerabilities the ReAct mechanism has from its thought process.          
+  
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/defences_fig4.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
+          This chart shows how three defenses—Hesitation Reflection, Safe Reflection, and Self Reflection—reduce the success of two types of attacks (IPI and FITD) across four models (LLaMA 3.1 70B, LLaMA 3 70B, Mixtral 8x7B, GPT-4o Mini). <br>
+          <b>Self Reflection:</b> offers moderate protection, but dosen't require additional LLM instanse, and the least invasive. <br>
+          <b>Hesitation Reflection:</b> defese better agasint the different attack cases (without false-positives), but require additional LLM instance. <br>
+          <b>Safe Reflection (orange):</b> the most invasive, defense against most of the attacks effiecnly, but require additioanl LLM instance and include significant amount of false-postiives. <br>
        </h2>
      </div>
-     <div class="item">
+     <div class="item has-text-centered">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <img src="static/images/heatmaps.jpeg" alt="MY ALT TEXT" class="is-centered"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        This heatmap compares the success rates (ASR) of FITD attacks based on the position and timing of the distractor across four models.
+        The x-axis represents the timing (early or late action), and the y-axis represents the position (early or late) within the input.
+        Results show that earlier placement (Position0) and earlier timing (Time0) consistently lead to higher ASR, indicating that starting with the distractor before the malicious request is the most effective approach, aligning with the original psychological foot-in-the-door effect. 
+        The position of the distractor has a greater impact than timing (as can be seen in the heatmap - the difference between the top and bottom rows is more significant than the difference between the left and right columns). 
       </h2>
     </div>
   </div>
@@ -191,17 +205,13 @@
 
 
 
-<!-- Youtube video -->
+<!-- 
 <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- Youtube embed code here -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
@@ -209,10 +219,10 @@
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+-->
 
 
-<!-- Video carousel -->
+<!-- 
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
@@ -220,21 +230,18 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
@@ -243,14 +250,13 @@
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+-->
 
 
 
 
 
-
-<!-- Paper poster -->
+<!-- 
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
@@ -262,14 +268,14 @@
       </div>
     </div>
   </section>
-<!--End paper poster -->
+-->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>BibTex Code will be added here</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
