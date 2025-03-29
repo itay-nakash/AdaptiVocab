@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://itay-nakash.github.io/adaptivocab"/>
 
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/images/adaptivocab_banner.png" />
+  <meta property="og:image" content="static/images/adaptivocab_icon.ico" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -68,7 +68,7 @@
             <div class="publication-links">
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/2503.19693.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>∫
                   <span>Paper</span>
                 </a>
               </span>
@@ -100,13 +100,14 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/main_examples_bench_no_people-1.png" alt="NL-Eye real examples. Example from every reasoning category." height="100%">
+      <img src="static/images/AdaptiVocab_pipeline.jpg" alt="AdaptiVocab pipeline illustration" height="100%">
       <h2 class="subtitle has-text-centered">
-        NL-Eye Examples. Each example represents a reasoning category, and contains 3 images: premise (left column), plausible hypothesis (middle column) and implausible hypothesis (right column). The plausible hypotheses are framed in green while the implausible in red. The explanations are provided below each sample.
+        The AdaptiVocab pipeline. Our method modifies an LLM's vocabulary by selecting domain-specific n-tokens, initializing embeddings with exponential weighting, and applying lightweight fine-tuning. This reduces token count by over 25% without sacrificing performance.
       </h2>
     </div>
   </div>
 </section>
+
 
 <!-- End teaser video -->
 
@@ -118,7 +119,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Will a Visual Language Model (VLM)-based bot warn us about slipping if it detects a wet floor? Recent VLMs have demonstrated impressive capabilities, yet their ability to infer outcomes and causes remains underexplored. To address this, we introduce NL-Eye, a benchmark designed to assess VLMs' visual abductive reasoning skills. NL-Eye adapts the abductive Natural Language Inference (NLI) task to the visual domain, requiring models to evaluate the plausibility of hypothesis images based on a premise image and explain their decisions. NL-Eye consists of 350 carefully curated triplet examples (1,050 images) spanning diverse reasoning categories: physical, functional, logical, emotional, cultural, and social. The data curation process involved two steps - writing textual descriptions and generating images using text-to-image models, both requiring substantial human involvement to ensure high-quality and challenging scenes. Our experiments show that VLMs struggle significantly on NL-Eye, often performing at random baseline levels, while humans excel in both plausibility prediction and explanation quality. This demonstrates a deficiency in the abductive reasoning capabilities of modern VLMs. NL-Eye represents a crucial step toward developing VLMs capable of robust multimodal reasoning for real-world applications, including accident-prevention bots and generated video verification.          </p>
+            Large Language Models (LLMs) have shown impressive versatility as general purpose models. However, their broad applicability comes at a high-cost computational overhead, particularly in auto-regressive decoding where each step requires a forward pass. In domain-specific settings, general-purpose capabilities are unnecessary and can be exchanged for efficiency. In this work, we take a novel perspective on domain adaptation, reducing latency and computational costs by adapting the vocabulary to focused domains of interest. We introduce AdaptiVocab, an end-to-end approach for vocabulary adaptation, designed to enhance LLM efficiency in low-resource domains. AdaptiVocab can be applied to any tokenizer and architecture, modifying the vocabulary by replacing tokens with domain-specific n-gram-based tokens, thereby reducing the number of tokens required for both input processing and output generation. AdaptiVocab initializes new n-token embeddings using an exponentially weighted combination of existing embeddings and employs a lightweight fine-tuning phase that can be efficiently performed on a single GPU. We evaluate two 7B LLMs across three niche domains, assessing efficiency, generation quality, and end-task performance. Our results show that AdaptiVocab reduces token usage by over 25% without compromising performance
+          </p>
         </div>
       </div>
     </div>
