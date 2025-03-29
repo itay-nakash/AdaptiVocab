@@ -129,185 +129,73 @@
 <!-- End paper abstract -->
 
 <!-- Image carousel -->
+<!-- Carousel 1: Tables – Generation, QA, Human Evaluation -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel1" class="carousel results-carousel1">
+
         <div class="item">
-          <!-- Centered image -->
           <div style="text-align: center;">
-            <img src="static/images/sample_wet_floor-1.png" alt="Motivation" style="width: 600px; height: auto;"/>
+            <img src="static/images/main_table_cut.png" alt="Generation Table" style="width: 700px; height: auto;"/>
           </div>
           <h2 class="subtitle has-text-centered">
-            Motivation: Will a VLM-based bot warn us about slipping if it detects a wet floor?
+            Automatic evaluation: Token savings with maintained generation quality.
           </h2>
         </div>
+
         <div class="item">
-          <!-- Centered image -->
           <div style="text-align: center;">
-            <img src="static/images/benchmark_creation_scheme_final-1.png" alt="curation" style="width: 500px; height: auto;"/>
+            <img src="static/images/QA_table.png" alt="QA Table" style="width: 700px; height: auto;"/>
           </div>
           <h2 class="subtitle has-text-centered">
-            NL-Eye data curation workflow scheme.
+            QA performance: AdaptiVocab matches Vanilla+FT on both seen and unseen examples.
           </h2>
         </div>
+
         <div class="item">
-          <!-- Centered image -->
           <div style="text-align: center;">
-            <img src="static/images/table1_page6-1.png" alt="models" style="width: 500px; height: auto;"/>
+            <img src="static/images/h_eval.png" alt="Human Eval Table" style="width: 700px; height: auto;"/>
           </div>
           <h2 class="subtitle has-text-centered">
-           Models and baselines by their input strategy and reasoning approach.  
+            Human evaluation: AdaptiVocab+FT rated on par with baselines by 9 different human evaluators.
           </h2>
         </div>
-        <div class="item">
-          <!-- Centered image -->
-          <div style="text-align: center;">
-            <img src="static/images/setups_scheme_with_metrics-1.png" alt="setups" style="width: 500px; height: auto;"/>
-          </div>
-          <h2 class="subtitle has-text-centered">
-            Two input setups of the VLM: (1) Triplet setup (left) and (2) Pairs setup (right). The triplet is provided two times with different orders of the hypotheses (A and B). The pairs should output a plausibility score. 
-          </h2>
-        </div>
-        <div class="item">
-          <!-- Centered image -->
-          <div style="text-align: center;">
-            <img src="static/images/table2_page8-1.png" alt="vision-based reasoning" style="width: 500px; height: auto;"/>
-          </div>
-          <h2 class="subtitle has-text-centered">
-          Main results: scores for vision-based experiments. VLMs are greatly outperformed by humans.   
-          </h2>
-        </div>
-        <div class="item">
-          <!-- Centered image -->
-          <div style="text-align: center;">
-            <img src="static/images/categories_nleye-1.png" alt="categories" style="width: 600px; height: auto;"/>
-          </div>
-          <h2 class="subtitle has-text-centered">
-            VLMs struggle with the Emotional and Functional categories but perform better on Social and Cultural ones and on parallel reasoning.
-          </h2>
-        </div>
-        <div class="item">
-          <!-- Centered image -->
-          <div style="text-align: center;">
-            <img src="static/images/table3_page9-1.png" alt="text-based reasoning" style="width: 500px; height: auto;"/>
-          </div>
-          <h2 class="subtitle has-text-centered">
-          Text-based: Performace for plausibility prediction in the triplet setup. Predictor models perform well when using the gold-description.   
-          </h2>
-        </div>
-        <div class="item">
-          <!-- Centered image -->
-          <div style="text-align: center;">
-            <img src="static/images/error_analysis_heatmap_hq-1.png" alt="error analysis" style="width: 500px; height: auto;"/>
-          </div>
-          <h2 class="subtitle has-text-centered">
-            Failure factors of model explanation for incorrect plausibility prediction.
-          </h2>
-        </div>
+
       </div>
     </div>
   </div>
 </section>
-<!-- End image carousel -->
 
-<!-- Image carousel -->
+<!-- Carousel 2: Tokenization and Ablation -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
+      <div id="results-carousel2" class="carousel results-carousel2">
+
         <div class="item">
-          <!-- Centered image -->
           <div style="text-align: center;">
-            <img src="static/images/full_example_annotation1-1.png" alt="Emotional" style="width: 600px; height: auto;"/>
+            <img src="static/images/tok_example.png" alt="Tokenization Comparison" style="width: 700px; height: auto;"/>
           </div>
           <h2 class="subtitle has-text-centered">
-            Fully annotated example from the NL-Eye benchmark, featuring textual descriptions, three images, gold-standard explanations, reasoning categories, and temporal attributes (direction and duration).
+            Tokenization: AdaptiVocab reduces input and output tokens using domain-specific n-grams.
           </h2>
         </div>
+
         <div class="item">
-          <!-- Centered image -->
           <div style="text-align: center;">
-            <img src="static/images/full_example_annotation2-1.png" alt="Functional" style="width: 600px; height: auto;"/>
+            <img src="static/images/ablation table.png" alt="Ablation Tables" style="width: 700px; height: auto;"/>
           </div>
           <h2 class="subtitle has-text-centered">
-            Fully annotated example from the NL-Eye benchmark, featuring textual descriptions, three images, gold-standard explanations, reasoning categories, and temporal attributes (direction and duration).
+            Ablation study: Our initialization and fine-tuning choices outperform alternatives.
           </h2>
         </div>
-        <div class="item">
-          <!-- Centered image -->
-          <div style="text-align: center;">
-            <img src="static/images/full_anno_3.png" alt="Logical" style="width: 600px; height: auto;"/>
-          </div>
-          <h2 class="subtitle has-text-centered">
-            Fully annotated example from the NL-Eye benchmark, featuring textual descriptions, three images, gold-standard explanations, reasoning categories, and temporal attributes (direction and duration).
-          </h2>
-        </div>
+
       </div>
     </div>
   </div>
 </section>
-<!-- End image carousel -->
-
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <!-- <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video"> -->
-            <!-- Youtube embed code here -->
-            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- </section> --> 
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- </section> --> 
-<!-- End video carousel -->
-
-
-
-
+<!-- End carousel -->
 
 
 <!-- Paper poster -->
@@ -329,36 +217,15 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{ventura2024nleye,
-        title={NL-Eye: Abductive NLI for Images},
-        author={Mor Ventura and Michael Toker and Nitay Calderon and Zorik Gekhman and Yonatan Bitton and Roi Reichart},
-        year={2024},
-        eprint={2410.02613},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV}
-    }</code></pre>
+      <pre><code>@article{nakash2025adaptivocab,
+        title={AdaptiVocab: Enhancing LLM Efficiency in Focused Domains through Lightweight Vocabulary Adaptation},
+        author={Nakash, Itay and Calderon, Nitay and David, Eyal Ben and Hoffer, Elad and Reichart, Roi},
+        journal={arXiv preprint arXiv:2503.19693},
+        year={2025}
+      }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 <!-- Statcounter tracking code -->
   
