@@ -1,0 +1,36 @@
+wandb/
+.vscode/
+__pycache__
+evaluate/QA/result/
+trained_models/
+old/
+# Results and logs that don't need to be shared
+domain_generated_tasks/results/old_results/
+domain_generated_tasks/results/summary_results_domain.csv
+domain_generated_tasks/results/summary_results_domain_new.csv
+evaluate/QA/results/
+evaluate/QA/results_(old prompts)/
+
+# Large model directories
+trained_models_0306/
+trained_models_0506/
+
+#shit
+for_debug/
+
+# Data directories (consider if these need to be backed up elsewhere)
+data/
+saved_patch_tokenizers/
+src/saved_patch_tokenizers_analyze/
+src/saved_patch_tokenizers_no_ngrams/
+src/saved_patch_tokenizers_no_ngrams_new_logs/
+src/saved_patch_tokenizerstest/
+
+# keys
+
+gemma-nlp-422508-c4d4ce542552-gilat.json
+gemma-nlp_key.json
+generation_output_special_models/
+gemma-nlp-422508-985bc760e1d8.json
+
+domain_generated_tasks/results/
