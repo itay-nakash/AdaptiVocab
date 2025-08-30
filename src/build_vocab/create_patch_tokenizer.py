@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.constants import *
 from transformers import AutoTokenizer,AutoModelForCausalLM
 import utils.utils_funcs as utils
-from domain_selection import compare_datasets
+from build_vocab.compare_datasets import AnalysisRunner
 from reduce_vocab import reduce_vocab
 from build_vocab.add_ngrams import find_ngrams_to_add
 import pickle
@@ -46,7 +46,7 @@ def create_patch_tokenizer(cfg:Dict,debug_runs:bool=False):
         
     if cfg['analyze_ds_names']==[]:
         ds_names,config_names = ([],[])
-    runner_original_tokenizer = compare_datasets.AnalysisRunner(tokenizer=original_tokenizer, dataset_names=ds_names,n=0,k_most_ngrams=[],ds_configs=config_names)
+    runner_original_tokenizer = AnalysisRunner(tokenizer=original_tokenizer, dataset_names=ds_names,n=0,k_most_ngrams=[],ds_configs=config_names)
     results_before_reduce=runner_original_tokenizer.run_analysis()
 
     # handle ds:
@@ -95,7 +95,7 @@ def create_patch_tokenizer(cfg:Dict,debug_runs:bool=False):
     assert len(added_ngrams) == len(removed_tokens), "Number of added ngrams should be equal to the number of removed tokens"
     new_tokenizer = PatchTokenizer(existing_tokenizer_name=cfg['original_tokenizer'],removed_tokens=removed_tokens,ngram_dict=added_ngrams)
 
-    runner_new_tokenizer = compare_datasets.AnalysisRunner(tokenizer=new_tokenizer, dataset_names=ds_names,ds_configs=config_names)
+    runner_new_tokenizer = AnalysisRunner(tokenizer=new_tokenizer, dataset_names=ds_names,ds_configs=config_names)
     results_after_changes=runner_new_tokenizer.run_analysis()
 
         # -------- edit model:

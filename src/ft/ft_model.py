@@ -3,7 +3,6 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import argparse
-import wandb
 from transformers import AutoTokenizer,AutoModelForCausalLM, TrainingArguments, Trainer
 from datasets import DatasetDict, Dataset
 from utils.constants import *

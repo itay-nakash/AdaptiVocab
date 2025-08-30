@@ -2,11 +2,6 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.constants import *
-import json
-import random
-import numpy as np
-import torch
-import wandb
 import sys
 from collections import defaultdict
 from datasets import Dataset, load_dataset
@@ -15,10 +10,8 @@ import re
 import json
 from typing import Dict
 from datetime import datetime
-from transformers import AutoTokenizer
 from utils.constants import *
 import utils.utils_funcs as utils
-import logging
 
 
 # HANDEL DATASETS FOR TOKENIZERS TRAINING

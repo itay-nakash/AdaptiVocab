@@ -3,7 +3,6 @@ import json
 import random
 import numpy as np
 import torch
-import wandb
 import sys
 from collections import defaultdict
 from datasets import Dataset, load_dataset
@@ -106,19 +105,6 @@ def log_w_wandb(logger, message, level='info', enable_wandb=True, **kwargs):
     # Standard logging
     log_func = level_dict.get(level, logger.info)
     log_func(message)
-
-    if enable_wandb:
-        try:
-            import wandb
-            if wandb.run is not None:
-                log_data = {"log_message": message, "log_level": level}
-                log_data.update(kwargs)  # Add any additional keyword arguments
-                wandb.log(log_data)
-        except ImportError:
-            logger.warning("wandb is not installed or initialized.")
-        except Exception as e:
-            logger.error(f"Error logging to wandb: {str(e)}")
-
 
 # names utils:
 def cfg_to_filename(cfg:Dict)->str:
