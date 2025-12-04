@@ -99,20 +99,16 @@ def load_custom_model(model_name:str,emb_method:str,patch_tokenizer_path:str=Non
             for param in model.get_input_embeddings().parameters():
                 param.requires_grad = True
             
+            end_layer = len(model.model.layers)
+            start_layer = end_layer - unfroz[1]
             if unfroz[0] > 0:
-           #     assert unfroz[0] <= len(model.model.layers), f"Unfrozen layer index {unfroz[0]} is out of range"
-                for i,layer_index in enumerate(range(unfroz[0])):
+                assert unfroz[0] <= len(model.model.layers), f"Unfrozen layer index {unfroz[0]} is out of range"
+                utils.log_w_wandb(logger=logger, message=f"Unfrozen the first {unfroz[0]} layers")
+                for layer_index in range(start_layer, unfroz[0]):
                     utils.log_w_wandb(logger=logger, message=f"Unfrozen layer: {layer_index}")
-                    if i==15:
-                        layer_to_unfroze = model.model.layers[layer_index]
-                        for param in layer_to_unfroze.parameters():
-                            param.requires_grad = True
-
-                    if i==16:
-                        layer_to_unfroze = model.model.layers[layer_index]
-                        for param in layer_to_unfroze.parameters():
-                            param.requires_grad = True
-
+                    layer_to_unfroze = model.model.layers[layer_index]
+                    for param in layer_to_unfroze.parameters():
+                        param.requires_grad = True
             if unfroz[1] > 0:
                 assert unfroz[1] <= len(model.model.layers), f"Unfrozen layer index {unfroz[1]} is out of range"
                 end_layer = len(model.model.layers)
